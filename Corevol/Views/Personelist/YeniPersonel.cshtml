@@ -1,0 +1,27 @@
+﻿@model Corevol.Models.Personel
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+<div class="container-fluid">
+    <form class="form-group" method="post">
+
+        @Html.LabelFor(x => x.Ad)
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Soyad)
+        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Sehir)
+        @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.BirimID)
+        @Html.DropDownListFor(x=>x.Birim.BirimID , (List<SelectListItem>)ViewBag.dgr , new  {@class="form-control" } )
+        <br />
+
+        <button class="btn btn-info" type="submit">Personel Ekle</button>
+    </form>
+
+    </div>

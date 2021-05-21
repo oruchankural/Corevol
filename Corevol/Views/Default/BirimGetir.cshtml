@@ -1,0 +1,24 @@
+﻿@model Corevol.Models.Birim
+@{
+    ViewData["Title"] = "BirimGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+<div class="container-fluid">
+    @using (Html.BeginForm("BirimGuncelle", "Default", FormMethod.Post))
+    {
+    <div class="hidden">
+        <b>Birim ID</b>
+        @Html.TextBoxFor(x => x.BirimID, new { @class = "form-control " })
+
+    </div>
+       
+        <br />
+        <b>Birim Adı</b>
+        @Html.TextBoxFor(x => x.BirimAd, new { @class = "form-control " })
+        <br />
+        <button class="btn btn-warning">Birim Guncelle</button>
+    }
+
+</div>

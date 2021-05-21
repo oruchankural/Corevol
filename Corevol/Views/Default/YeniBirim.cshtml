@@ -1,0 +1,18 @@
+﻿@model Corevol.Models.Birim
+@{
+    ViewData["Title"] = "YeniBirim";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<br />
+<div class="container-fluid">
+    <form class="form-group" method="post">
+
+        <b>Birim Adı</b>
+        @Html.TextBoxFor(x => x.BirimAd, new { @class = "form-control" })
+
+        <br />
+        <button class="btn btn-info" type="submit">Departman Ekle</button>
+    </form>
+
+    </div>

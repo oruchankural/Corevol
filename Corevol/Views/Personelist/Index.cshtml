@@ -1,0 +1,45 @@
+﻿@using Corevol.Models
+@model List<Personel>
+
+    @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    }
+
+    <br />
+    <div class="container-fluid">
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Şehir</th>
+                <th>Departman</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+
+
+
+            @foreach(var x in Model )
+        {
+
+
+            <tr>
+                <td>@x.PersonelID</td>
+                <td>@x.Ad</td>
+                <td>@x.Soyad</td>
+                <td>@x.Sehir</td>
+                <td>@x.Birim.BirimAd</td>
+                <td><a href="/Personel/PersonelSil/@x.PersonelID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Personel/PersonelGetir/@x.PersonelID" class="btn btn-warning">Güncelle</a></td>
+
+
+            </tr>
+        }
+
+        </table>
+        <a href="/Personelist/YeniPersonel" class="btn btn-info">Yeni Personel</a>
+    </div>
+
+
